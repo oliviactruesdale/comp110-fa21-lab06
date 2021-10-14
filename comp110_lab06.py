@@ -10,18 +10,24 @@ def create_edited_string(text_with_edit_marks):
 
 
     final_str = ""
+    caps_lock_mode = False
+    
 
     for ch in text_with_edit_marks:
-        final_str = final_str + ch
-        if final_str != '!':
-            final_str.append()
-        #elif final_str != '^':
-        #final_str.append()
-        #elif final_str != '_':
-        #final_str.append()
-    print("I lover flowers!")
-
+        if ch == '!':
+            pass
+        elif ch =='^':
+            caps_lock_mode = True
+        elif ch == '_':
+            pass
+        else: 
+            if caps_lock_mode == True:
+                final_str = final_str + ch.upper()
+            else: final_str = final_str + ch
     return final_str
+
+
+
 
 
 
